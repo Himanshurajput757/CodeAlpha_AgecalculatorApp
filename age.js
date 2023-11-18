@@ -4,6 +4,7 @@ let result = document.getElementById("result");
 userinput.max = new Date().toISOString().split("T")[0];
 console.log(userinput.max);
 
+//Add a click event function on button to get result 
 btn.addEventListener('click',()=>
 {
     let birthdate = new Date(userinput.value);
@@ -21,6 +22,7 @@ btn.addEventListener('click',()=>
     let d3,m3,y3;
 
     y3 = y2 -y1;
+    
 
 if(userinput.value == "")
 {
@@ -37,7 +39,7 @@ else
     {
         y3--;
         m3 = 12 + m2 - m1;
-    }
+            }
     if(d2 >=d1)
     {
         d3 = d2 -d1;
@@ -46,6 +48,7 @@ else
     {
         m3--;
         d3 = getDaysInMonth(y1,m1)+ d2 -d1;
+    
     }
     if(m3 <0)
     {
@@ -56,6 +59,7 @@ else
 }
 })
 
+//get the total day of month of the year
 function getDaysInMonth(year,month)
 {
     return new Date(year,month, 0).getDate();
